@@ -2,33 +2,42 @@
 
 /**
  * main - Entry point
- * @ac: argument count
+ * @argc: argument count
  * @argv: argument vector
  *
  * Return: integer
  */
-int main(int ac, char **argv)
+int main(int argc, char **argv)
 {
 	char *prompt = "Bash $ ";
 	char *line;
 	size_t size = 0;
-
-	(void)ac;
-	 (void)argv;
+	ssize_t chars_read;
+	char *token;
+	(void)argc;
 
 	while (1)
 	{
 		printf("%s", prompt);
-		fflush(stdout);
+		chars_read = getline(&line, &size, stdin);
 
-		if (getline(&line, &size, stdin) == -1)
+		if (chars_read == -1)
 		{
 			printf("\n");
+			free(line);
 			break;
-
+		}
+		token = strtok(line, " \n");
+		if (token == NULL)
+		{
+			continue;
+		}
+		if (execve(argv[0], argv, NULL) == -1)
+		{
+			perror("Error");
+			fflush(stdin);
 		}
 	}
-		free(line);
-		return (0);
+	free(line);
+	return (0);
 }
-

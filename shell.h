@@ -16,5 +16,6 @@ char *string_dup(char *str);
 int abs_(int n);
 long atoi_(const char *s);
 char *itoa_(int value, char *buffer, int base);
+size_t str_cspn(const char *str1, const char *str2);
 
 #endif /* SHELL_H */
