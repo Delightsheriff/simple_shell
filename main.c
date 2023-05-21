@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	char *prompt = "Bash $ ";
-	char *line;
+	char *line = NULL;
 	size_t size = 0;
 	ssize_t chars_read;
 	char *token;
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		{
 			continue;
 		}
-		if (execve(argv[0], argv, NULL) == -1)
+		if (execve(token, argv, NULL) == -1)
 		{
 			perror("Error");
 			fflush(stdin);
