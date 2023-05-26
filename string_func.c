@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-  * _strcat - Concatenates two strings
+  * _strcat - A function that concatenates two strings
   * @dest: The destination string
   * @src: The source string
   *
@@ -25,7 +25,7 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
-  * _strlen - Counts the length of a string
+  * _strlen - A function that counts the length of a string
   * @s: The string to counts
   *
   * Return: The length of a string
@@ -41,7 +41,7 @@ int _strlen(const char *s)
 }
 
 /**
-  * _strcmp - Compares two strings
+  * _strcmp - A function that compares two strings
   * @s1: The first string
   * @s2: The second string
   *
@@ -79,7 +79,7 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
-  * _strdup - Duplicate a string
+  * _strdup - A function that duplicates a string
   * @str: the string to duplicate
   *
   * Return: the string duplicated
@@ -108,7 +108,7 @@ char *_strdup(char *str)
 }
 
 /**
-  * _atoi - Convert a string to an integer.
+  * _atoi - A function that convert a string to an integer.
   * @s: The pointer to convert
   *
   * Return: A integer

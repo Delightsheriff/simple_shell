@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * remove_new_line - Removes a new line character from string
+ * remove_new_line - Removes a new line from string
  * @str: The string
  *
  * Return: The string without a new line character

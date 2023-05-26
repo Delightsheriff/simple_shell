@@ -2,8 +2,8 @@
 
 /**
   * tokenize - Extract tokens from string
-  * @str: The string to tokenize
-  * @del: The delimiter of tokenization
+  * @str: The string
+  * @del: The delimiter
   * @len: Tokens number
   *
   * Return: An array of tokens of the string

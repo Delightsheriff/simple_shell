@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
-  * _handle_exit - ...
-  * @u_tokns: ...
-  * @line: ...
+  * _handle_exit - a function to exit the shell
+  * @u_tokns: first argument
+  * @line: second argument
   *
   * Return: Nothing to returns
-  */
+ */
 void _handle_exit(char **u_tokns, char *line)
 {
 	int status = 0;

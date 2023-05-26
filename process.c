@@ -73,7 +73,7 @@ char *find(char *cname)
 }
 
 /**
-  * exec - Executes a command
+  * exec - Executes command
   * @cname: The command to execute
   * @opts: The options or flags to the command
   *
@@ -91,10 +91,12 @@ int exec(char *cname, char **opts)
 			return (-1);
 		case 0:
 			execve(cname, opts, environ);
+			break;
 		default:
 			do {
 				waitpid(child, &status, WUNTRACED);
-			} while (WIFEXITED(status) == 0 && WIFSIGNALED(status) == 0);
+			} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+			break;
 	}
 
 	return (0);
